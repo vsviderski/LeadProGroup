@@ -11,7 +11,7 @@ const AUTH_FRAME_CUT = 4;
 const authFrameOuterClip = `polygon(0 ${AUTH_FRAME_R}px, ${AUTH_FRAME_R}px 0, calc(100% - ${AUTH_FRAME_CUT}px) 0, 100% ${AUTH_FRAME_CUT}px, 100% calc(100% - ${AUTH_FRAME_R}px), calc(100% - ${AUTH_FRAME_R}px) 100%, ${AUTH_FRAME_CUT}px 100%, 0 calc(100% - ${AUTH_FRAME_CUT}px))`;
 const authFrameInnerClip = `polygon(0 ${AUTH_FRAME_R - AUTH_FRAME_BORDER}px, ${AUTH_FRAME_R - AUTH_FRAME_BORDER}px 0, calc(100% - ${AUTH_FRAME_CUT - AUTH_FRAME_BORDER}px) 0, 100% ${AUTH_FRAME_CUT - AUTH_FRAME_BORDER}px, 100% calc(100% - ${AUTH_FRAME_R - AUTH_FRAME_BORDER}px), calc(100% - ${AUTH_FRAME_R - AUTH_FRAME_BORDER}px) 100%, ${AUTH_FRAME_CUT - AUTH_FRAME_BORDER}px 100%, 0 calc(100% - ${AUTH_FRAME_CUT - AUTH_FRAME_BORDER}px))`;
 
-export type ButtonVariant = 'filled' | 'outline' | 'auth-login' | 'auth-register';
+export type ButtonVariant = 'filled' | 'outline' | 'secondary' | 'primary';
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -20,10 +20,10 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({ variant = 'filled', children, className, ...props }: ButtonProps) {
-  if (variant === 'auth-login') {
+  if (variant === 'secondary') {
     return (
       <div
-        className={cn('flex h-[46px] overflow-hidden', className)}
+        className={cn('flex h-[46px] shrink-0 overflow-hidden', className)}
         style={{
           padding: AUTH_FRAME_BORDER,
           background: AUTH_GRADIENT,
@@ -41,7 +41,8 @@ export function Button({ variant = 'filled', children, className, ...props }: Bu
             type="button"
             className={cn(
               'flex h-full min-w-[113px] w-full items-center justify-center',
-              'text-sm font-normal text-white transition-colors hover:bg-white/5'
+              'text-sm font-normal text-white hover:bg-white/5',
+              'border border-transparent'
             )}
             style={{
               clipPath: `polygon(0 ${AUTH_LEFT_R}px, ${AUTH_LEFT_R}px 0, calc(100% - ${AUTH_NOTCH}px) 0, 100% ${AUTH_NOTCH}px, 100% calc(100% - ${AUTH_NOTCH}px), calc(100% - ${AUTH_NOTCH}px) 100%, ${AUTH_LEFT_R}px 100%, 0 calc(100% - ${AUTH_LEFT_R}px))`,
@@ -55,24 +56,25 @@ export function Button({ variant = 'filled', children, className, ...props }: Bu
     );
   }
 
-  if (variant === 'auth-register') {
+  if (variant === 'primary') {
     return (
-      <button
-        type="button"
-        className={cn(
-          'flex h-full min-w-[158px] flex-1 items-center justify-center',
-          'text-sm font-extrabold text-white',
-          'transition-opacity hover:opacity-90',
-          className
-        )}
-        style={{
-          background: AUTH_GRADIENT,
-          clipPath: authFrameOuterClip,
-        }}
-        {...props}
-      >
-        {children}
-      </button>
+      <div className={cn('flex h-[46px] shrink-0', className)}>
+        <button
+          type="button"
+          className={cn(
+            'flex h-full min-w-[158px] w-full flex-1 items-center justify-center',
+            'text-sm font-extrabold text-white',
+            'border border-transparent hover:opacity-90'
+          )}
+          style={{
+            background: AUTH_GRADIENT,
+            clipPath: authFrameOuterClip,
+          }}
+          {...props}
+        >
+          {children}
+        </button>
+      </div>
     );
   }
 
@@ -80,9 +82,11 @@ export function Button({ variant = 'filled', children, className, ...props }: Bu
     <button
       type="button"
       className={cn(
-        'rounded-md px-4 py-3 text-sm font-medium transition-colors',
-        variant === 'filled' && 'bg-gradient-to-br from-[#007AFF] to-[#2BDBFF] text-white',
-        variant === 'outline' && 'border border-[#007AFF]/50 bg-transparent text-white',
+        'rounded-md px-4 py-3 text-sm font-medium',
+        variant === 'filled' &&
+          'bg-gradient-to-br from-[#007AFF] to-[#2BDBFF] text-white hover:opacity-90',
+        variant === 'outline' &&
+          'border border-[#007AFF]/50 bg-transparent text-white hover:bg-[#007AFF]/10',
         className
       )}
       {...props}

@@ -14,13 +14,17 @@ function GamesPageContent() {
   });
 
   return (
-    <>
-      <Breadcrumbs items={[{ label: 'Главная' }, { label: 'игры' }]} className="mb-4" />
-      <FilterBar className="mb-5" />
-      <TagBar tags={DEFAULT_TAGS} activeId={activeTagId} onSelect={setActiveTagId} className="mb-6" />
-      <ContentGrid games={games} loading={loading} />
-      <div ref={sentinelRef} className="h-4" aria-hidden />
-    </>
+    <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
+      <div className="shrink-0">
+        <Breadcrumbs items={[{ label: 'Главная' }, { label: 'игры' }]} className="mb-4" />
+        <FilterBar className="mb-5" />
+        <TagBar tags={DEFAULT_TAGS} activeId={activeTagId} onSelect={setActiveTagId} className="mb-6" />
+      </div>
+      <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">
+        <ContentGrid games={games} loading={loading} />
+        <div ref={sentinelRef} className="h-4" aria-hidden />
+      </div>
+    </div>
   );
 }
 

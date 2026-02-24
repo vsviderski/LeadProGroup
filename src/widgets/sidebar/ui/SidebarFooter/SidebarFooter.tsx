@@ -13,10 +13,10 @@ export function SidebarFooter({ className }: SidebarFooterProps) {
         className
       )}
     >
-      <Button variant="auth-login" className="w-full justify-center text-sm">
+      <Button variant="secondary" className="w-full justify-center text-sm">
         Вход
       </Button>
-      <Button variant="auth-register" className="w-full justify-center text-sm">
+      <Button variant="primary" className="w-full justify-center text-sm">
         Регистрация
       </Button>
     </div>

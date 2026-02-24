@@ -1,14 +1,13 @@
-import { Icon } from '../Icon/Icon';
-import { IconClose } from '@shared/assets/icons';
+import { ReactNode } from 'react';
 import { cn } from '@shared/lib';
+import { IconClose } from '@shared/assets/icons';
+import { Icon } from '../Icon/Icon';
 
 export interface LayoutProps {
   header: ReactNode;
   sidebar: ReactNode;
   children: ReactNode;
-  /** Нижний блок в шторке (например, кнопки Вход/Регистрация), виден только при открытой шторке (< md) */
   sidebarFooter?: React.ReactNode;
-  /** На мобильных (< md) сайдбар открывается по кнопке меню (шторка); от планшетов — постоянная колонка */
   sidebarOpen?: boolean;
   onSidebarClose?: () => void;
   className?: string;
@@ -28,7 +27,7 @@ export function Layout({
   return (
     <div
       className={cn(
-        'flex min-h-screen flex-col bg-[#050414] text-white',
+        'flex h-dvh max-h-dvh flex-col overflow-hidden bg-[#050414] text-white',
         className
       )}
     >
@@ -41,7 +40,6 @@ export function Layout({
 
       {header}
 
-      {/* Оверлей на весь экран: перекрывает и хедер */}
       {hasDrawer && sidebarOpen && (
         <button
           type="button"
@@ -51,13 +49,12 @@ export function Layout({
         />
       )}
 
-      <div className="flex min-h-0 flex-1">
-        {/* Шторка только на мобильных (< md); от планшетов — обычная колонка */}
+      <div className="flex min-h-0 flex-1 overflow-hidden">
         <div
           className={cn(
             hasDrawer
-              ? 'fixed left-0 top-0 z-30 flex h-dvh w-[min(280px,85vw)] flex-col bg-[#08071d] shadow-2xl transition-transform duration-300 ease-out md:relative md:z-auto md:mt-0 md:h-auto md:w-[220px] md:translate-x-0 md:shrink-0 md:shadow-none'
-              : 'relative w-[220px] shrink-0',
+              ? 'fixed left-0 top-0 z-30 flex h-dvh w-[min(280px,85vw)] flex-col bg-[#08071d] shadow-2xl transition-transform duration-300 ease-out md:relative md:z-auto md:mt-0 md:h-full md:w-[220px] md:translate-x-0 md:shrink-0 md:shadow-none'
+              : 'relative h-full w-[220px] shrink-0',
             hasDrawer && !sidebarOpen && '-translate-x-full'
           )}
         >
@@ -73,7 +70,7 @@ export function Layout({
               </button>
             </div>
           )}
-          <div className="flex min-h-0 flex-1 flex-col">
+          <div className="flex min-h-0 flex-1 flex-col overflow-hidden">
             {sidebar}
             {sidebarFooter && (
               <div className="mt-auto border-t border-white/5 p-3 md:hidden">
@@ -83,7 +80,9 @@ export function Layout({
           </div>
         </div>
 
-        <main className="min-w-0 flex-1 px-3 pb-8 pt-4 sm:px-4">{children}</main>
+        <main className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden px-3 pb-8 pt-4 sm:px-4">
+          {children}
+        </main>
       </div>
     </div>
   );

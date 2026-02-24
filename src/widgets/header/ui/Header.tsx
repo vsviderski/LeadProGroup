@@ -62,11 +62,11 @@ export function Header({
           </span>
         </span>
       </div>
-      <div className="hidden h-9 shrink-0 items-center gap-2 sm:gap-3 md:flex md:h-[46px] [&>div]:transition-transform [&>div]:duration-200 [&>div]:ease-out [&>div]:hover:scale-[1.03] [&>div]:active:scale-[0.98] [&>button]:transition-transform [&>button]:duration-200 [&>button]:ease-out [&>button]:hover:scale-[1.03] [&>button]:active:scale-[0.98]">
-        <Button variant="auth-login" className="text-sm px-3 sm:px-4">
+      <div className="hidden h-9 shrink-0 items-center gap-2 sm:gap-3 md:flex md:h-[46px]">
+        <Button variant="secondary" className="text-sm px-3 sm:px-4">
           Вход
         </Button>
-        <Button variant="auth-register" className="text-sm px-3 sm:px-4">
+        <Button variant="primary" className="text-sm px-3 sm:px-4">
           Регистрация
         </Button>
       </div>

@@ -1,7 +1,7 @@
 import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
 import type { SortState } from '../types/types';
 
-const defaultSortState: SortState = {
+export const defaultSortState: SortState = {
   field: 'popularity',
   order: 'asc',
 };

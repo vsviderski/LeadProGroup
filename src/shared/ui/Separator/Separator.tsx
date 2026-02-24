@@ -5,10 +5,7 @@ export interface SeparatorProps {
   className?: string;
 }
 
-export function Separator({
-  orientation = 'vertical',
-  className,
-}: SeparatorProps) {
+export function Separator({ orientation = 'vertical', className }: SeparatorProps) {
   if (orientation === 'diagonal') {
     return (
       <span
@@ -16,10 +13,7 @@ export function Separator({
         aria-hidden
         className={cn('inline-flex shrink-0 items-center justify-center', className)}
       >
-        <span
-          className="h-4 w-px rotate-[24deg] bg-white/20"
-          style={{ minWidth: 1 }}
-        />
+        <span className="h-4 w-px rotate-[24deg] bg-white/20" style={{ minWidth: 1 }} />
       </span>
     );
   }

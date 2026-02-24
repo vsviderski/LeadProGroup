@@ -7,12 +7,7 @@ export interface SidebarFooterProps {
 
 export function SidebarFooter({ className }: SidebarFooterProps) {
   return (
-    <div
-      className={cn(
-        'flex flex-col gap-2 [&>*]:flex-none [&>*]:h-[46px]',
-        className
-      )}
-    >
+    <div className={cn('flex flex-col gap-2 [&>*]:h-[46px] [&>*]:flex-none', className)}>
       <Button variant="secondary" className="w-full justify-center text-sm">
         Вход
       </Button>

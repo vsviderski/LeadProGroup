@@ -36,7 +36,7 @@ export function Header({
           <button
             type="button"
             onClick={onMenuClick}
-            className="order-1 flex size-10 shrink-0 items-center justify-center rounded-lg text-white/90 transition-[color,background-color,transform] duration-200 ease-out hover:scale-105 hover:bg-white/10 hover:text-white active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/30 md:hidden"
+            className="order-1 flex size-10 shrink-0 items-center justify-center rounded-lg text-white/90 transition-[color,background-color,transform] duration-200 ease-out hover:scale-105 hover:bg-white/10 hover:text-white focus:ring-2 focus:ring-white/30 focus:outline-none active:scale-95 md:hidden"
             aria-label="Открыть меню"
           >
             <Icon Svg={IconMenu} width={24} height={24} />
@@ -46,7 +46,7 @@ export function Header({
           <SearchField
             value={searchValue}
             onChange={handleSearchChange}
-            className="w-full min-w-0 max-w-[324px] md:max-w-[324px] lg:max-w-[480px]"
+            className="w-full max-w-[324px] min-w-0 md:max-w-[324px] lg:max-w-[480px]"
           />
         </div>
         <span
@@ -63,10 +63,10 @@ export function Header({
         </span>
       </div>
       <div className="hidden h-9 shrink-0 items-center gap-2 sm:gap-3 md:flex md:h-[46px]">
-        <Button variant="secondary" className="text-sm px-3 sm:px-4">
+        <Button variant="secondary" className="px-3 text-sm sm:px-4">
           Вход
         </Button>
-        <Button variant="primary" className="text-sm px-3 sm:px-4">
+        <Button variant="primary" className="px-3 text-sm sm:px-4">
           Регистрация
         </Button>
       </div>

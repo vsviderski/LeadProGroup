@@ -40,7 +40,7 @@ export function Button({ variant = 'filled', children, className, ...props }: Bu
           <button
             type="button"
             className={cn(
-              'flex h-full min-w-[113px] w-full items-center justify-center',
+              'flex h-full w-full min-w-[113px] items-center justify-center',
               'text-sm font-normal text-white hover:bg-white/5',
               'border border-transparent'
             )}
@@ -62,7 +62,7 @@ export function Button({ variant = 'filled', children, className, ...props }: Bu
         <button
           type="button"
           className={cn(
-            'flex h-full min-w-[158px] w-full flex-1 items-center justify-center',
+            'flex h-full w-full min-w-[158px] flex-1 items-center justify-center',
             'text-sm font-extrabold text-white',
             'border border-transparent hover:opacity-90'
           )}
@@ -83,10 +83,8 @@ export function Button({ variant = 'filled', children, className, ...props }: Bu
       type="button"
       className={cn(
         'rounded-md px-4 py-3 text-sm font-medium',
-        variant === 'filled' &&
-          'bg-gradient-to-br from-[#007AFF] to-[#2BDBFF] text-white hover:opacity-90',
-        variant === 'outline' &&
-          'border border-[#007AFF]/50 bg-transparent text-white hover:bg-[#007AFF]/10',
+        variant === 'filled' && 'bg-gradient-to-br from-[#007AFF] to-[#2BDBFF] text-white hover:opacity-90',
+        variant === 'outline' && 'border border-[#007AFF]/50 bg-transparent text-white hover:bg-[#007AFF]/10',
         className
       )}
       {...props}

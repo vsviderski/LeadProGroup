@@ -22,13 +22,10 @@ export function useSidebarState(initialNavId: string | null = 'games') {
     [activeNavId]
   );
 
-  const handleNavSelect = useCallback(
-    (id: string) => {
-      setActiveNavId(id);
-      setSidebarOpen(false);
-    },
-    []
-  );
+  const handleNavSelect = useCallback((id: string) => {
+    setActiveNavId(id);
+    setSidebarOpen(false);
+  }, []);
 
   return {
     activeNavId,

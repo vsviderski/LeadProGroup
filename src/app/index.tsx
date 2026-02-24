@@ -4,34 +4,16 @@ import { Sidebar, useSidebarState, SidebarFooter } from '@widgets/sidebar';
 import { GamesPage } from '@pages/games';
 
 export function App() {
-  const {
-    sidebarOpen,
-    openSidebar,
-    closeSidebar,
-    navItems,
-    handleNavSelect,
-    activeNavId,
-  } = useSidebarState();
+  const { sidebarOpen, openSidebar, closeSidebar, navItems, handleNavSelect, activeNavId } =
+    useSidebarState();
 
   return (
     <AppLayout
-      header={
-        <Header
-          onMenuClick={openSidebar}
-        />
-      }
-      sidebar={
-        <Sidebar
-          items={navItems}
-          activeId={activeNavId}
-          onNavSelect={handleNavSelect}
-        />
-      }
+      header={<Header onMenuClick={openSidebar} />}
+      sidebar={<Sidebar items={navItems} activeId={activeNavId} onNavSelect={handleNavSelect} />}
       sidebarOpen={sidebarOpen}
       onSidebarClose={closeSidebar}
-      sidebarFooter={
-        <SidebarFooter />
-      }
+      sidebarFooter={<SidebarFooter />}
     >
       <GamesPage />
     </AppLayout>

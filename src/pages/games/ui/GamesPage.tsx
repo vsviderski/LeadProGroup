@@ -20,7 +20,7 @@ function GamesPageContent() {
         <FilterBar className="mb-5" />
         <TagBar tags={DEFAULT_TAGS} activeId={activeTagId} onSelect={setActiveTagId} className="mb-6" />
       </div>
-      <div className="min-h-0 flex-1 overflow-y-auto overflow-x-hidden">
+      <div className="min-h-0 flex-1 overflow-x-hidden overflow-y-auto">
         <ContentGrid games={games} loading={loading} />
         <div ref={sentinelRef} className="h-4" aria-hidden />
       </div>

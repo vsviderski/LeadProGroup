@@ -1,23 +1,23 @@
 @font-face {
-  font-family: "Proxima Nova";
-  src: url("/fonts/ProximaNova-Regular.woff2") format("woff2");
+  font-family: 'Proxima Nova';
+  src: url('/fonts/ProximaNova-Regular.woff2') format('woff2');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
-  font-family: "Proxima Nova";
-  src: url("/fonts/ProximaNova-Bold.woff2") format("woff2");
+  font-family: 'Proxima Nova';
+  src: url('/fonts/ProximaNova-Bold.woff2') format('woff2');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
-  --font-sans: "Proxima Nova", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Proxima Nova", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: 'Proxima Nova', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Proxima Nova', ui-sans-serif, system-ui, sans-serif;
 }
 
 html {

@@ -42,6 +42,4 @@ function createMockGame(index: number): Game {
 
 const MOCK_GAMES_COUNT = 150;
 
-export const MOCK_GAMES: Game[] = Array.from({ length: MOCK_GAMES_COUNT }, (_, i) =>
-  createMockGame(i)
-);
+export const MOCK_GAMES: Game[] = Array.from({ length: MOCK_GAMES_COUNT }, (_, i) => createMockGame(i));

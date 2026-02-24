@@ -1,8 +1,7 @@
 import { type InputHTMLAttributes, useId } from 'react';
 import { cn } from '@shared/lib';
 
-export interface InputSearchProps
-  extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
+export interface InputSearchProps extends Omit<InputHTMLAttributes<HTMLInputElement>, 'type'> {
   label?: string;
   className?: string;
   inputClassName?: string;
@@ -29,15 +28,8 @@ export function InputSearch({
         )}
         {...props}
       />
-      <span
-        className="absolute right-3 size-[15px] opacity-80"
-        aria-hidden
-      >
-        <svg
-          viewBox="0 0 15 15"
-          fill="none"
-          className="size-full text-white"
-        >
+      <span className="absolute right-3 size-[15px] opacity-80" aria-hidden>
+        <svg viewBox="0 0 15 15" fill="none" className="size-full text-white">
           <path
             d="M14 14L10.5 10.5M6.5 12a5.5 5.5 0 1 1 0-11 5.5 5.5 0 0 1 0 11z"
             stroke="currentColor"

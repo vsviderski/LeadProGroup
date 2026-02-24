@@ -86,16 +86,13 @@ export function Select({ label, options, value, onValueChange, className }: Sele
   };
 
   return (
-    <div
-      ref={containerRef}
-      className={cn('relative flex flex-col', label && 'pt-3', className)}
-    >
+    <div ref={containerRef} className={cn('relative flex flex-col', label && 'pt-3', className)}>
       {label && (
         <label
           id={`${id}-label`}
           className={cn(
-            'absolute left-3.5 top-3 -translate-y-1/2 w-fit text-[10px] font-medium leading-none text-white/60',
-            "before:absolute before:left-0 before:right-0 before:top-1/2 before:h-[3px] before:-translate-y-1/2 before:bg-[#161426] before:content-['']"
+            'absolute top-3 left-3.5 w-fit -translate-y-1/2 text-[10px] leading-none font-medium text-white/60',
+            "before:absolute before:top-1/2 before:right-0 before:left-0 before:h-[3px] before:-translate-y-1/2 before:bg-[#161426] before:content-['']"
           )}
         >
           <span className="relative z-10">{label}</span>

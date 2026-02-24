@@ -15,11 +15,7 @@ export function Loader({ className, size = 'md' }: LoaderProps) {
     <div
       role="status"
       aria-label="Загрузка"
-      className={cn(
-        'animate-spin rounded-full border-white/20 border-t-white',
-        sizeClasses[size],
-        className
-      )}
+      className={cn('animate-spin rounded-full border-white/20 border-t-white', sizeClasses[size], className)}
     />
   );
 }

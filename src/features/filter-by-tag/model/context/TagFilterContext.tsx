@@ -16,11 +16,7 @@ export function TagFilterProvider({ children, initialTagId = 'all' }: TagFilterP
   const [activeTagId, setActiveTagId] = useState<string | null>(initialTagId);
   const value: TagFilterContextValue = { activeTagId, setActiveTagId };
 
-  return (
-    <TagFilterContext.Provider value={value}>
-      {children}
-    </TagFilterContext.Provider>
-  );
+  return <TagFilterContext.Provider value={value}>{children}</TagFilterContext.Provider>;
 }
 
 export function useTagFilter(): TagFilterContextValue {

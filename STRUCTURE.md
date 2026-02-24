@@ -7,69 +7,96 @@ src/
 │
 ├── pages/                  # Страницы (композиция виджетов + свой UI)
 │   └── games/
-│       ├── GamesPage.tsx   # Страница «Игры»: Layout, состояние, контент
 │       ├── ui/
-│       │   └── ContentGrid.tsx  # Сетка карточек игр (только для этой страницы)
+│       │   ├── GamesPage.tsx      # Страница «Игры»: состояние, контент
+│       │   └── ContentGrid/
+│       │       └── ContentGrid.tsx # Сетка карточек игр (только для этой страницы)
+│       ├── hooks/
+│       │   └── useGamesList.ts    # Загрузка и состояние списка игр (фильтр, сортировка, пагинация)
 │       └── index.ts
 │
 ├── widgets/                # Крупные блоки страницы
 │   ├── header/
-│   │   ├── Header.tsx      # Шапка: логотип, поиск, кнопки Вход/Регистрация
+│   │   ├── ui/
+│   │   │   ├── Header.tsx         # Шапка: логотип, поиск, кнопки Вход/Регистрация
+│   │   │   ├── Logo/
+│   │   │   │   ├── Logo.tsx
+│   │   │   │   ├── LogoIcon.tsx
+│   │   │   │   └── LogoText.tsx
+│   │   │   └── SearchField/
+│   │   │       └── SearchField.tsx
 │   │   └── index.ts
 │   ├── sidebar/
-│   │   ├── Sidebar.tsx     # Боковая панель
-│   │   ├── model/          # Навигация (перенесено из фичи sidebar-nav)
-│   │   │   ├── types.ts    # NavItem
-│   │   │   └── constants.ts# DEFAULT_NAV_ITEMS
-│   │   ├── ui/NavList.tsx
+│   │   ├── model/
+│   │   │   ├── types.ts           # NavItem
+│   │   │   ├── constants.ts       # DEFAULT_NAV_ITEMS
+│   │   │   └── useSidebarState.ts # Состояние открытия сайдбара и навигации
+│   │   ├── ui/
+│   │   │   ├── Sidebar.tsx
+│   │   │   ├── NavList.tsx
+│   │   │   └── SidebarFooter.tsx
 │   │   └── index.ts
 │   ├── breadcrumbs/
-│   │   ├── Breadcrumbs.tsx # Хлебные крошки (Главная / игры)
+│   │   ├── Breadcrumbs.tsx        # Хлебные крошки (Главная / игры)
 │   │   └── index.ts
 │   └── filter-bar/
-│       ├── FilterBar.tsx   # Заголовок «Игры» + сортировка + иконка фильтра
+│       ├── FilterBar.tsx          # Заголовок «Игры» + сортировка + иконка фильтра
 │       └── index.ts
 │
 ├── features/               # Интерактивные сценарии
 │   ├── filter-by-tag/
 │   │   ├── model/
-│   │   │   ├── types.ts     # TagItem
-│   │   │   └── constants.ts # DEFAULT_TAGS
+│   │   │   ├── types/
+│   │   │   │   └── types.ts       # TagItem
+│   │   │   ├── consts/
+│   │   │   │   └── consts.tsx    # DEFAULT_TAGS
+│   │   │   ├── context/
+│   │   │   │   └── TagFilterContext.tsx
+│   │   │   └── helpers/
+│   │   │       └── filterByTagId.ts
 │   │   ├── ui/TagBar/
 │   │   │   └── TagBar.tsx
 │   │   └── index.ts
 │   ├── sort-games/
-│   │   ├── model/types.ts   # SortState, SortField, SortOrder
+│   │   ├── model/
+│   │   │   ├── types/
+│   │   │   │   └── types.ts       # SortState, SortField, SortOrder
+│   │   │   └── context/
+│   │   │       └── SortStateContext.tsx
 │   │   ├── ui/SortSelects/
 │   │   │   └── SortSelects.tsx
 │   │   └── index.ts
-│   └── search/
-│       ├── ui/SearchField/
-│       │   └── SearchField.tsx
-│       └── index.ts
 │
 ├── entities/               # Сущности и их отображение
 │   └── game/
-│       ├── model/types.ts   # Интерфейс Game
+│       ├── model/
+│       │   ├── types/
+│       │   │   └── types.ts       # Интерфейс Game
+│       │   └── mocks/
+│       │       └── games.ts      # Мок-данные игр
 │       ├── ui/GameCard/
 │       │   └── GameCard.tsx
-│       └── index.ts         # единственный index в сущности
+│       └── index.ts
 │
 └── shared/                 # Переиспользуемые ресурсы
     ├── lib/
-    │   ├── index.ts        # cn(), useInfiniteScroll
+    │   ├── index.ts              # cn(), useInfiniteScroll
     │   └── useInfiniteScroll.ts
     ├── ui/
-    │   ├── Layout/Layout.tsx   # Общий layout: фон, header, sidebar, main(children)
+    │   ├── Layout/Layout.tsx     # Общий layout: фон, header, sidebar, main(children)
     │   ├── Button/Button.tsx
     │   ├── Tag/Tag.tsx
     │   ├── InputSearch/InputSearch.tsx
     │   ├── Select/Select.tsx
-    │   ├── Logo/Logo.tsx
     │   ├── Icon/Icon.tsx
     │   ├── Separator/Separator.tsx
     │   ├── Loader/Loader.tsx
     │   └── index.ts
+    ├── assets/
+    │   ├── images/               # Изображения (в т.ч. превью игр)
+    │   └── icons/                # SVG-иконки (React-компоненты)
+    ├── types/
+    │   └── icon.ts
     └── index.ts
 ```
 

@@ -7,7 +7,7 @@ export type { InputSearchProps } from './InputSearch/InputSearch';
 export { Select } from './Select/Select';
 export type { SelectProps, SelectOption } from './Select/Select';
 export { Icon } from './Icon/Icon';
-export type { IconProps, IconName } from './Icon/Icon';
+export type { IconProps } from './Icon/Icon';
 export { Separator } from './Separator/Separator';
 export type { SeparatorProps } from './Separator/Separator';
 export { Loader } from './Loader/Loader';

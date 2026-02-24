@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import { Button, Icon } from '@shared/ui';
-import { SearchField } from '@features/search';
+import { IconMenu } from '@shared/assets/icons';
+import { SearchField } from './SearchField/SearchField';
 import { Logo, APP_NAME } from './Logo/Logo';
 import { LogoIcon } from './Logo/LogoIcon';
 import { cn } from '@shared/lib';
@@ -11,7 +13,17 @@ interface HeaderProps {
   className?: string;
 }
 
-export function Header({ searchValue = '', onSearchChange, onMenuClick, className }: HeaderProps) {
+export function Header({
+  searchValue: controlledSearch,
+  onSearchChange,
+  onMenuClick,
+  className,
+}: HeaderProps) {
+  const [internalSearch, setInternalSearch] = useState('');
+  const isControlled = onSearchChange != null;
+  const searchValue = isControlled ? (controlledSearch ?? '') : internalSearch;
+  const handleSearchChange = isControlled ? onSearchChange! : setInternalSearch;
+
   return (
     <header
       className={cn(
@@ -24,17 +36,16 @@ export function Header({ searchValue = '', onSearchChange, onMenuClick, classNam
           <button
             type="button"
             onClick={onMenuClick}
-            className="order-1 flex size-10 shrink-0 items-center justify-center rounded-lg text-white/90 transition-colors hover:bg-white/10 hover:text-white focus:outline-none focus:ring-2 focus:ring-white/30 md:hidden"
+            className="order-1 flex size-10 shrink-0 items-center justify-center rounded-lg text-white/90 transition-[color,background-color,transform] duration-200 ease-out hover:scale-105 hover:bg-white/10 hover:text-white active:scale-95 focus:outline-none focus:ring-2 focus:ring-white/30 md:hidden"
             aria-label="Открыть меню"
           >
-            <Icon name="menu" size={24} />
+            <Icon Svg={IconMenu} width={24} height={24} />
           </button>
         )}
-        {/* На мобильных — поиск по центру; от md — слева */}
         <div className="order-2 flex min-w-0 flex-1 justify-center md:justify-start">
           <SearchField
             value={searchValue}
-            onChange={onSearchChange}
+            onChange={handleSearchChange}
             className="w-full min-w-0 max-w-[324px] md:max-w-[324px] lg:max-w-[480px]"
           />
         </div>
@@ -51,7 +62,7 @@ export function Header({ searchValue = '', onSearchChange, onMenuClick, classNam
           </span>
         </span>
       </div>
-      <div className="hidden h-9 shrink-0 items-center gap-2 sm:gap-3 md:flex md:h-[46px]">
+      <div className="hidden h-9 shrink-0 items-center gap-2 sm:gap-3 md:flex md:h-[46px] [&>div]:transition-transform [&>div]:duration-200 [&>div]:ease-out [&>div]:hover:scale-[1.03] [&>div]:active:scale-[0.98] [&>button]:transition-transform [&>button]:duration-200 [&>button]:ease-out [&>button]:hover:scale-[1.03] [&>button]:active:scale-[0.98]">
         <Button variant="auth-login" className="text-sm px-3 sm:px-4">
           Вход
         </Button>

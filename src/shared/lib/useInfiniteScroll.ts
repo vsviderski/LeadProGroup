@@ -17,14 +17,11 @@ export function useInfiniteScroll({
 }: UseInfiniteScrollOptions) {
   const sentinelRef = useRef<HTMLDivElement>(null);
 
-  const handleIntersect = useCallback(
-    (entries: IntersectionObserverEntry[]) => {
-      const [entry] = entries;
-      if (!entry?.isIntersecting || !hasMore || loading) return;
-      onLoadMore();
-    },
-    [onLoadMore, hasMore, loading]
-  );
+  const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+    const [entry] = entries;
+    if (!entry?.isIntersecting || !hasMore || loading) return;
+    onLoadMore();
+  };
 
   useEffect(() => {
     const el = sentinelRef.current;

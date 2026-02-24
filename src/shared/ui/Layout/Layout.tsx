@@ -1,4 +1,5 @@
 import { Icon } from '../Icon/Icon';
+import { IconClose } from '@shared/assets/icons';
 import { cn } from '@shared/lib';
 
 export interface LayoutProps {
@@ -68,7 +69,7 @@ export function Layout({
                 className="flex size-10 items-center justify-center rounded-lg text-white/80 transition-colors hover:bg-white/10 hover:text-white"
                 aria-label="Закрыть меню"
               >
-                <Icon name="close" size={24} />
+                <Icon Svg={IconClose} width={24} height={24} />
               </button>
             </div>
           )}

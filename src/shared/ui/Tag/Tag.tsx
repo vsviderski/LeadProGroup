@@ -19,7 +19,7 @@ export function Tag({
     <button
       type="button"
       className={cn(
-        'inline-flex items-center justify-center gap-1.5 rounded-md px-1.5 py-0.5 text-xs transition-colors',
+        'inline-flex items-center justify-center gap-1.5 rounded-md px-3 py-1.5 text-xs transition-colors duration-200',
         active
           ? 'bg-[#24243A] text-[#7FB8FF]'
           : 'bg-transparent text-white hover:bg-[#24243A]/50',

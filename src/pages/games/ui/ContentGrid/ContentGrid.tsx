@@ -1,7 +1,7 @@
-import { GameCard } from '@entities/game';
 import type { Game } from '@entities/game';
-import { Loader } from '@shared/ui';
+import { GameCard } from '@entities/game';
 import { cn } from '@shared/lib';
+import { Loader } from '@shared/ui';
 
 export interface ContentGridProps {
   games: Game[];
@@ -9,11 +9,7 @@ export interface ContentGridProps {
   className?: string;
 }
 
-export function ContentGrid({
-  games,
-  loading = false,
-  className,
-}: ContentGridProps) {
+export function ContentGrid({ games, loading = false, className }: ContentGridProps) {
   return (
     <div className={cn('relative', className)}>
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">

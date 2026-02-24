@@ -1,4 +1,5 @@
 import { Icon } from '@shared/ui';
+import { IconHome } from '@shared/assets/icons';
 import { cn } from '@shared/lib';
 
 export interface BreadcrumbItem {
@@ -17,7 +18,7 @@ export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
       className={cn('flex items-center gap-1.5 text-xs text-white', className)}
       aria-label="Хлебные крошки"
     >
-      <Icon name="home-outline" size={12} aria-label="" />
+      <Icon Svg={IconHome} width={12} height={12} aria-label="" />
       {items.map((item, index) => (
         <span key={index}>
           {item.href ? (

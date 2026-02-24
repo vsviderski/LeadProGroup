@@ -1,5 +1,5 @@
-import { NavList } from './ui/NavList';
-import type { NavItem } from './model/types';
+import { NavList } from './NavList/NavList';
+import type { NavItem } from '../model/types';
 import { cn } from '@shared/lib';
 
 export interface SidebarProps {
@@ -9,12 +9,7 @@ export interface SidebarProps {
   className?: string;
 }
 
-export function Sidebar({
-  items,
-  activeId,
-  onNavSelect,
-  className,
-}: SidebarProps) {
+export function Sidebar({ items, activeId, onNavSelect, className }: SidebarProps) {
   return (
     <aside
       className={cn(
@@ -23,11 +18,7 @@ export function Sidebar({
       )}
       aria-label="Боковая панель"
     >
-      <NavList
-        items={items}
-        activeId={activeId}
-        onSelect={onNavSelect}
-      />
+      <NavList items={items} activeId={activeId} onSelect={onNavSelect} />
     </aside>
   );
 }

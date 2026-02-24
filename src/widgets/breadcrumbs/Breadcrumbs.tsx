@@ -1,6 +1,6 @@
-import { Icon } from '@shared/ui';
 import { IconHome } from '@shared/assets/icons';
 import { cn } from '@shared/lib';
+import { Icon } from '@shared/ui';
 
 export interface BreadcrumbItem {
   label: string;

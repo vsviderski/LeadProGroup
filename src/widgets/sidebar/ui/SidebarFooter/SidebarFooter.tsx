@@ -1,5 +1,5 @@
-import { Button } from '@shared/ui';
 import { cn } from '@shared/lib';
+import { Button } from '@shared/ui';
 
 export interface SidebarFooterProps {
   className?: string;

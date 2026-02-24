@@ -1,10 +1,10 @@
 import { useState } from 'react';
-import { Button, Icon } from '@shared/ui';
 import { IconMenu } from '@shared/assets/icons';
-import { SearchField } from './SearchField/SearchField';
+import { cn } from '@shared/lib';
+import { Button, Icon } from '@shared/ui';
 import { Logo, APP_NAME } from './Logo/Logo';
 import { LogoIcon } from './Logo/LogoIcon';
-import { cn } from '@shared/lib';
+import { SearchField } from './SearchField/SearchField';
 
 interface HeaderProps {
   onSearchChange?: (value: string) => void;

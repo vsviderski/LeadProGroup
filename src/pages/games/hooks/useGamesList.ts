@@ -1,8 +1,8 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { MOCK_GAMES, type Game } from '@entities/game';
-import { useInfiniteScroll } from '@shared/lib';
 import { filterByTagId } from '@features/filter-by-tag';
 import type { SortState } from '@features/sort-games';
+import { useInfiniteScroll } from '@shared/lib';
 
 const PAGE_SIZE = 15;
 

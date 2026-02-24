@@ -1,5 +1,5 @@
-import type { Game } from '../types/types';
 import { getGameImageUrl } from '@shared/assets/images';
+import type { Game } from '../types/types';
 
 const MOCK_TAG_IDS = ['fast', 'slots', 'casino', 'live', 'popular', 'new', 'bonus'] as const;
 

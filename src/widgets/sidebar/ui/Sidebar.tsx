@@ -1,6 +1,6 @@
-import { NavList } from './NavList/NavList';
-import type { NavItem } from '../model/types';
 import { cn } from '@shared/lib';
+import type { NavItem } from '../model/types';
+import { NavList } from './NavList/NavList';
 
 export interface SidebarProps {
   items: NavItem[];

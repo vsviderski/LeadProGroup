@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import { cn } from '@shared/lib';
 import { gamePlaceholderUrl } from '@shared/assets/images';
+import { cn } from '@shared/lib';
 import type { Game } from '../../model/types/types';
 
 export interface GameCardProps {

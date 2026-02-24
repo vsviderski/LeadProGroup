@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, useId } from 'react';
-import { Icon } from '../Icon/Icon';
 import { IconChevron } from '@shared/assets/icons';
 import { cn } from '@shared/lib';
+import { Icon } from '../Icon/Icon';
 
 export interface SelectOption {
   value: string;

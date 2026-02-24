@@ -1,4 +1,3 @@
-import { Icon } from '@shared/ui';
 import {
   IconGridAll,
   IconFastGames,
@@ -9,6 +8,7 @@ import {
   IconBonusBuy,
   IconSearch,
 } from '@shared/assets/icons';
+import { Icon } from '@shared/ui';
 import type { TagItem } from '../types/types';
 
 const ICON_SIZE = 16;

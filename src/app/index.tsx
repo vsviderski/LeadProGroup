@@ -1,7 +1,7 @@
-import { Layout as AppLayout } from '@shared/ui';
+import { GamesPage } from '@pages/games';
 import { Header } from '@widgets/header';
 import { Sidebar, useSidebarState, SidebarFooter } from '@widgets/sidebar';
-import { GamesPage } from '@pages/games';
+import { Layout as AppLayout } from '@shared/ui';
 
 export function App() {
   const { sidebarOpen, openSidebar, closeSidebar, navItems, handleNavSelect, activeNavId } =

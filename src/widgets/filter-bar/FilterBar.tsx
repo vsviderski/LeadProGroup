@@ -1,7 +1,7 @@
 import { SortSelects, useSortState, defaultSortState } from '@features/sort-games';
-import { Icon } from '@shared/ui';
 import { IconFilter } from '@shared/assets/icons';
 import { cn } from '@shared/lib';
+import { Icon } from '@shared/ui';
 
 export interface FilterBarProps {
   title?: string;

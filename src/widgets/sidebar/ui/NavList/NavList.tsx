@@ -1,5 +1,4 @@
 import type { ComponentType } from 'react';
-import { Icon } from '@shared/ui';
 import {
   IconHome,
   IconCards,
@@ -10,8 +9,9 @@ import {
   IconApps,
   IconChevron,
 } from '@shared/assets/icons';
-import type { NavItem } from '../../model/types';
 import { cn } from '@shared/lib';
+import { Icon } from '@shared/ui';
+import type { NavItem } from '../../model/types';
 
 const NAV_ICONS: Record<string, ComponentType<{ size?: number; className?: string }>> = {
   home: IconHome,

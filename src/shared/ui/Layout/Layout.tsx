@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
-import { cn } from '@shared/lib';
 import { IconClose } from '@shared/assets/icons';
+import { cn } from '@shared/lib';
 import { Icon } from '../Icon/Icon';
 
 export interface LayoutProps {

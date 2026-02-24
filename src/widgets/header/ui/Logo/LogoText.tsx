@@ -1,4 +1,3 @@
-/** Текстовая часть логотипа "Lead Pro" без иконки */
 export function LogoText({ className, height = 16 }: { className?: string; height?: number }) {
   const width = (80 / 11.16) * height;
   return (

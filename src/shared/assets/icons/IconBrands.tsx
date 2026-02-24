@@ -1,7 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/** Иконка «Бренды» для сайдбара. Цвет наследуется. */
 export function IconBrands({ size = 20, className }: IconProps) {
   return (
     <span

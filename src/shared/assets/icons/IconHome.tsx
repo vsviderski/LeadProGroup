@@ -1,7 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/** Иконка «Главная» (дом) для сайдбара. Цвет наследуется (активность: синий, неактивность: серый). */
 export function IconHome({ size = 16, className }: IconProps) {
   return (
     <span

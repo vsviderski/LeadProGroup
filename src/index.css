@@ -1,4 +1,3 @@
-/* Proxima Nova: файлы в public/fonts/ (скачаны скриптом scripts/download-proxima-nova.js) */
 @font-face {
   font-family: "Proxima Nova";
   src: url("/fonts/ProximaNova-Regular.woff2") format("woff2");
@@ -37,14 +36,11 @@ body {
   height: 100%;
 }
 
-
-/* Firefox */
 * {
   scrollbar-width: thin;
   scrollbar-color: #24243a #161426;
 }
 
-/* WebKit (Chrome, Safari, Edge) */
 *::-webkit-scrollbar {
   width: 8px;
   height: 8px;

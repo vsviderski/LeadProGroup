@@ -1,7 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/** Иконка «Игры» (слоты/кости) для сайдбара. Цвет наследуется. */
 export function IconCards({ size = 18, className }: IconProps) {
   return (
     <span

@@ -1,10 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/**
- * Иконка «Провайдеры» / «Казино» (шестерёнка с кругом).
- * Один компонент для сайдбара (Провайдеры) и тэгбара (Казино); цвет задаётся через className.
- */
 export function IconProviders({ size = 18, className }: IconProps) {
   return (
     <span

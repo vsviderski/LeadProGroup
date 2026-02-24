@@ -1,7 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/** Иконка «Новые» (тег) — подарок */
 export function IconNewGames({ size = 16, className }: IconProps) {
   return (
     <span

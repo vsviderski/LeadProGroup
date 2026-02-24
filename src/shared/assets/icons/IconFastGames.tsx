@@ -1,7 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/** Иконка «Быстрые игры» — кисть */
 export function IconFastGames({ size = 16, className }: IconProps) {
   return (
     <span

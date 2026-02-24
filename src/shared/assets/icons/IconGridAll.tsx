@@ -1,7 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/** Иконка «Все» / «Слоты» — сетка 4 квадранта */
 export function IconGridAll({ size = 16, className }: IconProps) {
   return (
     <span

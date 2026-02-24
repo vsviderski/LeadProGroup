@@ -1,7 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/** Иконка «Обновления» для сайдбара. Цвет наследуется. */
 export function IconNew({ size = 20, className }: IconProps) {
   return (
     <span

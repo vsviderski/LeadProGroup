@@ -33,7 +33,6 @@ export function InputSearch({
         className="absolute right-3 size-[15px] opacity-80"
         aria-hidden
       >
-        {/* Иконка поиска — можно заменить на SVG/компонент Icon */}
         <svg
           viewBox="0 0 15 15"
           fill="none"

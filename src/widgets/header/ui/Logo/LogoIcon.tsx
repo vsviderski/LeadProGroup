@@ -1,6 +1,5 @@
 import { useId } from 'react';
 
-/** Иконка логотипа (символ) без текста */
 export function LogoIcon({ className, size = 32 }: { className?: string; size?: number }) {
   const id = useId();
   return (

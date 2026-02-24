@@ -1,7 +1,6 @@
 import { cn } from '@shared/lib';
 import type { IconProps } from '@shared/types/icon';
 
-/** Иконка «Приложения» (четыре круга) для сайдбара. Цвет наследуется. */
 export function IconApps({ size = 17, className }: IconProps) {
   return (
     <span
